@@ -1,9 +1,68 @@
+$font-path: "./assets/fonts" !default
 @import ./assets/styles/bootstrap-grid.min.css
-    
-    
-body    
+
+@font-face
+    src: url('#{$font-path}/Proxima Nova Bold.otf') format("opentype")
+    font-family: 'Proxima Nova Bold'
+    font-weight: bold
+    font-style: normal
+
+@font-face
+    src: url('#{$font-path}/ProximaNova-Regular.otf') format("opentype")
+    font-family: 'Proxima Nova Regular'
+    font-weight: normal
+    font-style: normal
+
+@font-face
+    src: url('#{$font-path}/Poppins-Regular.ttf') format("opentype")
+    font-family: 'Poppins'
+    font-weight: normal
+    font-style: normal
+
+@font-face
+    src: url('#{$font-path}/Poppins-Bold.ttf') format("opentype")
+    font-family: 'Poppins Bold'
+    font-weight: bold
+    font-style: normal
+
+@font-face
+    src: url('#{$font-path}/Poppins-Light.ttf') format("opentype")
+    font-family: 'Poppins Light'
+    font-weight: lighter
+    font-style: normal
+
+@font-face
+    src: url('#{$font-path}/Poppins-Medium.ttf') format("opentype")
+    font-family: 'Poppins Medium'
+    font-weight: 400
+    font-style: normal
+
+body
     background-color: #EFF1F4
 
 .card
     padding: 20px
     border-radius: 30px
+    box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.16)
+
+h1
+    font-family: 'Proxima Nova Regular'!important
+
+h2
+    font-family: 'Poppins'!important
+
+p,a 
+    font-family: 'Poppins Light'!important
+
+.c-grey 
+    color: #BDC3C7
+
+.c-spotify 
+    color: #00D95F
+
+.center-image 
+    display: block
+    margin: 0 auto
+
+.text-center
+    text-align: center
