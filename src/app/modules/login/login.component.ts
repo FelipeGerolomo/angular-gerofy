@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/AuthenticationService/authentication.service';
+import { SpotifyService } from 'src/app/services/spotifyService/spotify.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authenticationService: AuthenticationService) {
+  
+  }
 
   ngOnInit(): void {
+  }
+
+  authentication() {
+    this.authenticationService.authentication();
   }
 
 }

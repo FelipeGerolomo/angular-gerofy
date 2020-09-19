@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpotifyService } from 'src/app/services/spotifyService/spotify.service';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private spotifyService: SpotifyService) { 
+    this.getUser();
+  }
 
   ngOnInit(): void {
+  }
+
+  getUser() {
+    this.spotifyService.getUser()
+    .toPromise().then((res: any) => console.log(res))
   }
 
 }
