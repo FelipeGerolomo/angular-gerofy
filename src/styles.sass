@@ -40,6 +40,7 @@ $font-path: "./assets/fonts" !default
 
 body
     background-color: #EFF1F4
+    overflow-y: hidden
 
 .card
     padding: 20px
@@ -99,3 +100,36 @@ hr
     border-color: #BCC2D0
     border-radius: 10px
     margin: 16px 0px
+
+::-webkit-scrollbar
+    width: 7px
+    height: 10px
+
+::-webkit-scrollbar-button
+    width: 0px
+    height: 0px
+
+::-webkit-scrollbar-thumb
+    background:#6200EE
+    border: 0px none #ffffff
+    border-radius: 50px
+
+::-webkit-scrollbar-thumb:hover
+    background:#6200EE
+
+::-webkit-scrollbar-thumb:active
+    background:#6200EE
+
+::-webkit-scrollbar-track
+    background: #e2e2e2
+    border: 0px none #ffffff
+    border-radius: 50px
+
+::-webkit-scrollbar-track:hover
+    background:#e2e2e2
+
+::-webkit-scrollbar-track:active
+    background: #e2e2e2
+
+::-webkit-scrollbar-corner
+    background: transparent

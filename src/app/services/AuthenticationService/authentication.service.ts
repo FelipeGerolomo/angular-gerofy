@@ -72,6 +72,8 @@ export class AuthenticationService {
     return this.http.get(environment.spotify_api + 'me')
       .toPromise().then((user: any) => {
         localStorage.setItem('currentUser', JSON.stringify(user));
+        this.currentUserSubject = new BehaviorSubject<any>(JSON.stringify(user));
+        this.currentUser = this.currentUserSubject.asObservable();
         this.router.navigate(['/main']);
       });
   }
