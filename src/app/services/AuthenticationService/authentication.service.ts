@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { SpotifyService } from '../spotifyService/spotify.service';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
@@ -18,7 +16,6 @@ export class AuthenticationService {
   public currentUser: Observable<any>;
 
   constructor(
-    private spotifyService: SpotifyService,
     private router: Router,
     private http: HttpClient
   ) {
@@ -27,8 +24,22 @@ export class AuthenticationService {
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
+  getAuth() {
+    const scopes = [
+      'user-read-currently-playing',
+      'user-read-playback-state',
+      'user-library-read',
+      'user-read-private',
+      'user-read-email',
+      'playlist-read-collaborative',
+      'playlist-modify-public',
+      'playlist-modify-private',
+    ];
+    return `${environment.spotify_url}authorize?client_id=${environment.client_id}&redirect_uri=${encodeURIComponent(environment.redirect_url)}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`;
+  }
+
   authentication() {
-    window.location.href = this.spotifyService.getAuth();
+    window.location.href = this.getAuth();
   }
 
   public get currentCredentials(): any {
@@ -63,5 +74,12 @@ export class AuthenticationService {
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.router.navigate(['/main']);
       });
+  }
+
+  logout() {
+    localStorage.clear();
+    this.currentUserSubject.next(null);
+    this.currentCredentials.next(null);
+    this.router.navigate(['/auth']);
   }
 }

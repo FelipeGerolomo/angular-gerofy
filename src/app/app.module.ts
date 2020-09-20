@@ -10,6 +10,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpRequestInterceptor } from './helpers/http.interceptor';
 import { SharedComponentsModule } from './modules/shared/shared-components.module';
 import { ImageFallbackDirective } from './directives/image-fallback.directive';
+import { ErrorInterceptor } from './helpers/error.interceptor';;
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { ImageFallbackDirective } from './directives/image-fallback.directive';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

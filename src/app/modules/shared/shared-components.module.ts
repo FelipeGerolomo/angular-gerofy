@@ -13,13 +13,13 @@ import { MatIconModule } from '@angular/material/icon';
     MatRippleModule,
     ImageFallbackDirective,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
   ],
   imports: [
     MatButtonModule,
     MatRippleModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
   ]
 })
 export class SharedComponentsModule {
