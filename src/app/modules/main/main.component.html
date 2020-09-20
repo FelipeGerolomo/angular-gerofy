@@ -21,6 +21,40 @@
         </div>
       </div>
     </div>
-    <button mat-raised-button color="primary" class="w-100 mt-30">Playlist</button>
+    <hr>
+    <div class="card-playlist" matRipple>
+      <h3 class="poppins-medium align-self-center mr-20">#1</h3>
+      <img src="assets/images/default-playlist.svg" alt="Playlist" class="playlist-img align-self-center mr-15">
+      <div class="align-self-center">
+        <h3 class="poppins-medium">Tennessee – Hans Zimmer</h3>
+        <p>18 tracks</p>
+      </div>
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="align-self-center ml-auto">
+        <mat-icon>more_horiz</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon color="warn">delete</mat-icon>
+          <span>Remove</span>
+        </button>
+      </mat-menu>
+    </div>
+    <div class="card-playlist" matRipple>
+      <h3 class="poppins-medium align-self-center mr-20">#1</h3>
+      <img src="assets/images/default-playlist.svg" alt="Playlist" class="playlist-img align-self-center mr-15">
+      <div class="align-self-center">
+        <h3 class="poppins-medium">Tennessee – Hans Zimmer</h3>
+        <p>18 tracks</p>
+      </div>
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="align-self-center ml-auto">
+        <mat-icon>more_horiz</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon color="warn">delete</mat-icon>
+          <span>Remove</span>
+        </button>
+      </mat-menu>
+    </div>
   </div>
 </div>
