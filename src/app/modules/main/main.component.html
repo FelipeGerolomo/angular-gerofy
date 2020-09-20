@@ -1,22 +1,22 @@
 <div class="container">
   <div class="card">
     <div class="content-user">
-      <img class="user-img" src="assets/images/felipe.png" alt="User Image">
+      <img class="user-img pre-image" [src]="userImage?.url || defaultUserImage" alt="User Image">
       <div class="user-info">
-        <h1 class="fs-28 poppins-medium mb-5">Felipe Gerolomo</h1>
-        <h2 class="poppins-medium c-grey">felipegerolomo@gmail.com</h2>
+        <h1 class="fs-28 poppins-medium mb-5">{{user?.display_name}}</h1>
+        <h2 class="poppins-medium c-grey">{{user?.email}}</h2>
         <div class="card-info mt-10">
           <div class="info-item">
             <p class="poppins-medium c-grey mb-5">Country</p>
-            <h1 class="fs-28 poppins-medium">Brazil</h1>
+            <h1 class="fs-28 poppins-medium">{{user?.country}}</h1>
           </div>
           <div class="info-item">
             <p class="poppins-medium c-grey mb-5">Followers</p>
-            <h1 class="fs-28 poppins-medium">80</h1>
+            <h1 class="fs-28 poppins-medium">{{user?.followers.total}}</h1>
           </div>
           <div class="info-item">
             <p class="poppins-medium c-grey mb-5">Product</p>
-            <h1 class="fs-28 poppins-medium">Premium</h1>
+            <h1 class="fs-28 poppins-medium">{{user?.product | titlecase }}</h1>
           </div>
         </div>
       </div>

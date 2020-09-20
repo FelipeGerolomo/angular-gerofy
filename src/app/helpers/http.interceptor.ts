@@ -7,13 +7,14 @@ import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class HttpRequestInterceptor implements HttpInterceptor {
-    constructor(private authenticationService: AuthenticationService) { }
+    constructor() { }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        const credentials = this.authenticationService.currentCredentials;
+        const credentials = JSON.parse(localStorage.getItem('credentials'));
+        console.log(credentials);
         const isLoggedIn = credentials.access_token;
         const isApiUrl = request.url.startsWith(environment.spotify_api);
-        if (isLoggedIn && isApiUrl && request.url.endsWith('me')) {
+        if (isLoggedIn && isApiUrl) {
             request = request.clone({
                 setHeaders: {
                     Authorization: `Bearer ${credentials.access_token}`

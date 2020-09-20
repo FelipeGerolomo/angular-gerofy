@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from 'src/app/services/spotifyService/spotify.service';
-
+import _ from 'lodash';
+import { AuthenticationService } from 'src/app/services/AuthenticationService/authentication.service';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -8,16 +9,21 @@ import { SpotifyService } from 'src/app/services/spotifyService/spotify.service'
 })
 export class MainComponent implements OnInit {
 
-  constructor(private spotifyService: SpotifyService) { 
-    //this.getUser();
+  user: any;
+  userImage: any;
+  defaultUserImage = 'assets/images/default-user.svg';
+
+  constructor(private authenticationService: AuthenticationService) {
+    this.getUser();
   }
 
   ngOnInit(): void {
+    
   }
 
   getUser() {
-    this.spotifyService.getUser()
-    .toPromise().then((res: any) => console.log(res))
+    this.user = this.authenticationService.currentUserValue;
+    this.userImage = _.head(this.user.images);
   }
 
 }

@@ -14,7 +14,11 @@ export class SpotifyService {
       'user-read-currently-playing',
       'user-read-playback-state',
       'user-library-read',
-      'user-read-private'
+      'user-read-private',
+      'user-read-email',
+      'playlist-read-collaborative',
+      'playlist-modify-public',
+      'playlist-modify-private',
     ];
     return `${environment.spotify_url}authorize?client_id=${environment.client_id}&redirect_uri=${encodeURIComponent(environment.redirect_url)}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`;
   }

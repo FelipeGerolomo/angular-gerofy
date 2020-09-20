@@ -9,9 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpRequestInterceptor } from './helpers/http.interceptor';
 import { SharedComponentsModule } from './modules/shared/shared-components.module';
+import { ImageFallbackDirective } from './directives/image-fallback.directive';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
