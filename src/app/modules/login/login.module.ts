@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
-import { MatRippleModule } from '@angular/material/core';
+import { SharedComponentsModule } from '../shared/shared-components.module';
 
 @NgModule({
   declarations: [LoginComponent],
   imports: [
     CommonModule,
     LoginRoutingModule,
-    MatRippleModule
+    SharedComponentsModule
   ]
 })
 export class LoginModule { }

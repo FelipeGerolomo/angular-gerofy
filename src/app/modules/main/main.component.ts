@@ -9,7 +9,7 @@ import { SpotifyService } from 'src/app/services/spotifyService/spotify.service'
 export class MainComponent implements OnInit {
 
   constructor(private spotifyService: SpotifyService) { 
-    this.getUser();
+    //this.getUser();
   }
 
   ngOnInit(): void {

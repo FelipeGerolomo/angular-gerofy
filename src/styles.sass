@@ -1,5 +1,7 @@
 $font-path: "./assets/fonts" !default
 @import ./assets/styles/bootstrap-grid.min.css
+@import ./assets/styles/_spaces.scss
+@import "~rfs/sass"
 
 @font-face
     src: url('#{$font-path}/Proxima Nova Bold.otf') format("opentype")
@@ -34,7 +36,6 @@ $font-path: "./assets/fonts" !default
 @font-face
     src: url('#{$font-path}/Poppins-Medium.ttf') format("opentype")
     font-family: 'Poppins Medium'
-    font-weight: 400
     font-style: normal
 
 body
@@ -44,6 +45,10 @@ body
     padding: 20px
     border-radius: 30px
     box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.16)
+    background-color: white
+
+h1,h2,h3,h4,h5,h6,p
+    margin: 0!important
 
 h1
     font-family: 'Proxima Nova Regular'!important
@@ -51,18 +56,45 @@ h1
 h2
     font-family: 'Poppins'!important
 
-p,a 
+p,a
     font-family: 'Poppins Light'!important
 
-.c-grey 
-    color: #BDC3C7
+.poppins-light
+    font-family: 'Poppins Light'!important
 
-.c-spotify 
+.poppins-medium
+    font-family: 'Poppins Medium'!important
+
+.poppins
+    font-family: 'Poppins'!important
+
+.c-grey
+    color: #BCC2D0
+
+.c-light-grey
+    color: #EFF1F4
+
+.c-spotify
     color: #00D95F
 
-.center-image 
+.center-image
     display: block
     margin: 0 auto
 
 .text-center
     text-align: center
+
+.fs-28
+    @include font-size(28px!important)
+
+.fs-20
+    @include font-size(20px!important)
+
+.w-100 
+    width: 100%
+
+// .mb-5
+//     margin-bottom: 5px!important
+
+// .mb-10 
+//     margin-bottom: 10px!important
