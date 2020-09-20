@@ -1,0 +1,19 @@
+<div class="card-music" matRipple>
+  <div class="align-self-center index">
+    <h3 class="poppins-medium align-self-center">#1</h3>
+  </div>
+  <img [src]="defaultMusicImage" alt="Playlist" class="playlist-img align-self-center mr-15">
+  <div class="align-self-center">
+    <h3 class="poppins-medium">Tennessee</h3>
+    <p>Hans Zimmer</p>
+  </div>
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="align-self-center ml-auto">
+    <mat-icon>more_horiz</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon color="warn">delete</mat-icon>
+      <span>Remove</span>
+    </button>
+  </mat-menu>
+</div>

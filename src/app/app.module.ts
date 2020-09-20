@@ -10,7 +10,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpRequestInterceptor } from './helpers/http.interceptor';
 import { SharedComponentsModule } from './modules/shared/shared-components.module';
 import { ImageFallbackDirective } from './directives/image-fallback.directive';
-import { ErrorInterceptor } from './helpers/error.interceptor';;
+import { ErrorInterceptor } from './helpers/error.interceptor';
+import { CardMusicComponent } from './components/card-music/card-music.component';;
 @NgModule({
   declarations: [
     AppComponent,

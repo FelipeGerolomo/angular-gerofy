@@ -11,11 +11,10 @@ const routes: Routes = [
       { path: '', redirectTo: 'main', pathMatch: 'full' },
       { path: 'main', loadChildren: () => import('./modules/main/main.module').then(m => m.MainModule), canActivate: [AuthGuard] },
       { path: 'auth', loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule) },
+      { path: 'playlist', loadChildren: () => import('./modules/playlist/playlist.module').then(m => m.PlaylistModule), canActivate: [AuthGuard] },
     ]
   },
-  // {
-  //   path: 'auth', component: LoginComponent, children: [{ path: '', component: LoginComponent }]
-  // }
+  
 ];
 
 // const routes: Routes = [
