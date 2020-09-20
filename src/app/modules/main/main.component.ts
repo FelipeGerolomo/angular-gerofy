@@ -36,7 +36,6 @@ export class MainComponent implements OnInit {
     this.spotifyService.getPlaylists()
       .toPromise().then((playlists: any) => {
         this.playlists = playlists.items;
-        console.log(this.playlists);
       });
   }
 

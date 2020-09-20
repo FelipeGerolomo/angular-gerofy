@@ -1,16 +1,17 @@
 <div class="container">
   <div class="card">
     <div class="content-playlist">
-      <img class="playlist-img" [src]="defaultPlaylistImage" alt="PlayList Image">
+      <img class="playlist-img" [src]="getPlayListImage()" alt="PlayList Image">
       <div class="playlist-info align-self-center">
         <h4 class="poppins-medium">Playlist</h4>
-        <h2 class="poppins-medium">Tennessee – Hans Zimmer</h2>
-        <h5 class="poppins">Created by: <span class="poppins-medium">Felipe Gerolomo</span> • 17 tracks </h5>
+        <h2 class="poppins-medium">{{playlist?.name}}</h2>
+        <h5 class="poppins">Created by: <span class="poppins-medium">{{playlist?.owner.display_name}}</span> •
+          {{playlist?.tracks?.total}} tracks </h5>
       </div>
     </div>
     <div class="songs mt-20">
-      <div *ngFor="let item of [0,1,2,3,4,5]">
-        <app-card-music></app-card-music>
+      <div *ngFor="let music of playlist?.tracks?.items; let index = index">
+        <app-card-music [music]='music' [index]="index"></app-card-music>
       </div>
     </div>
   </div>

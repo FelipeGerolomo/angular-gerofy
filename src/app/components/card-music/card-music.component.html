@@ -1,11 +1,11 @@
-<div class="card-music" matRipple>
+<div class="card-music">
   <div class="align-self-center index">
-    <h3 class="poppins-medium align-self-center">#1</h3>
+    <h3 class="poppins-medium align-self-center">#{{index+1}}</h3>
   </div>
-  <img [src]="defaultMusicImage" alt="Playlist" class="playlist-img align-self-center mr-15">
+  <img [src]="getMusicImage()" alt="Playlist" class="music-img align-self-center mr-15">
   <div class="align-self-center">
-    <h3 class="poppins-medium">Tennessee</h3>
-    <p>Hans Zimmer</p>
+    <h3 class="poppins-medium">{{music?.track?.name}}</h3>
+    <p>{{getArtist()}}</p>
   </div>
   <button mat-icon-button [matMenuTriggerFor]="menu" class="align-self-center ml-auto">
     <mat-icon>more_horiz</mat-icon>

@@ -18,4 +18,9 @@ export class SpotifyService {
     const endpoint = `users/${this.authenticationService.currentUserValue.id}/playlists`;
     return this.http.get(environment.spotify_api + endpoint);
   }
+
+  getPlaylist(id) {
+    const endpoint = `users/${this.authenticationService.currentUserValue.id}/playlists/${id}`;
+    return this.http.get(environment.spotify_api + endpoint);
+  }
 }

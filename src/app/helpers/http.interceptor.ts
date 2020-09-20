@@ -9,7 +9,6 @@ export class HttpRequestInterceptor implements HttpInterceptor {
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const credentials = JSON.parse(localStorage.getItem('credentials'));
-        console.log(credentials);
         const isLoggedIn = credentials.access_token;
         const isApiUrl = request.url.startsWith(environment.spotify_api);
         if (isLoggedIn && isApiUrl) {
