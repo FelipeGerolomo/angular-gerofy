@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import _ from 'lodash';
 @Component({
   selector: 'app-card-music',
@@ -10,19 +10,22 @@ export class CardMusicComponent implements OnInit {
 
   @Input('music') music: any;
   @Input('index') index: any;
+  @Input('selectMode') selectMode = false;
+  @Input('isSelected') isSelected = false;
+  @Output('onSelectSong') onSelectSong = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit(): void {
+    this.onSelectSong.emit
   }
 
   getMusicImage() {
-    return _.head(this.music.track.album.images).url;
-    //return this.music.track.album.images > 0 ? _.head(this.music.track.album.images).url : this.defaultMusicImage;
+    return _.head(this.music.album.images).url;
   }
 
   getArtist() {
-    return _.head(this.music.track.artists).name;
+    return _.head(this.music.artists).name;
   }
 
 }

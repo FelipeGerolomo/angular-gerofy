@@ -9,3 +9,8 @@
     </div>
   </div>
 </form>
+<div class="row" *ngFor="let music of musics; let index = index">
+    <div class="col">
+        <app-card-music [music]="music" [isSelected]="isSelected(music)" [index]="index" [selectMode]="true" (onSelectSong)="onSelectSong($event)"></app-card-music>
+    </div>
+</div>

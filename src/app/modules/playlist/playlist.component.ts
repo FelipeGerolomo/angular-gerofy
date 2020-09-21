@@ -37,10 +37,15 @@ export class PlaylistComponent implements OnInit {
   openDialogMusics() {
     const dialogRef = this.dialog.open(DialogMusicSearchComponent, {
       width: '600px',
+      maxHeight: '600px',
+      data: {
+        songs: this.playlist.tracks.items.map((item) => { return item.track }),
+        playlist: this.idPlaylist
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(!result) return;
+      if (!result) return;
     });
   }
 
