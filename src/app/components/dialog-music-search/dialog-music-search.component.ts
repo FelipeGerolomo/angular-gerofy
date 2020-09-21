@@ -11,7 +11,7 @@ import _ from 'lodash';
 export class DialogMusicSearchComponent implements OnInit {
 
   formGroup = new FormGroup({
-    search: new FormControl('Hail to the King'),
+    search: new FormControl(null),
   });
 
   musics: any;
@@ -33,7 +33,7 @@ export class DialogMusicSearchComponent implements OnInit {
   ngOnInit(): void {
     this.formGroup.get('search').valueChanges
       .subscribe((search: string) => {
-        if (search && search.length > 4) this.searchTrack(search);
+        if (search && search.length > 2) this.searchTrack(search);
       });
   }
 
