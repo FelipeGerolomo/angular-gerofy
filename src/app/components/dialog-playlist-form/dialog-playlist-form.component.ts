@@ -17,7 +17,15 @@ export class DialogPlaylistFormComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<DialogPlaylistFormComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+    @Inject(MAT_DIALOG_DATA) public data: any) {
+    if (data) this.setValues();
+  }
+
+  setValues() {
+    this.formGroup.get('name').setValue(this.data.name);
+    this.formGroup.get('description').setValue(this.data.description);
+    this.formGroup.get('public').setValue(this.data.public);
+  }
 
   onSubmit() {
     this.dialogRef.close(this.formGroup.getRawValue());
