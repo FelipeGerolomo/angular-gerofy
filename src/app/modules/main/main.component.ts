@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from 'src/app/services/spotifyService/spotify.service';
 import _ from 'lodash';
 import { AuthenticationService } from 'src/app/services/AuthenticationService/authentication.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogPlaylistFormComponent } from 'src/app/components/dialog-playlist-form/dialog-playlist-form.component';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -17,7 +19,8 @@ export class MainComponent implements OnInit {
 
   constructor(
     private authenticationService: AuthenticationService,
-    private spotifyService: SpotifyService
+    private spotifyService: SpotifyService,
+    public dialog: MatDialog
   ) {
     this.getUser();
     this.getPlaylists();
@@ -30,6 +33,21 @@ export class MainComponent implements OnInit {
   getUser() {
     this.user = this.authenticationService.currentUserValue;
     this.userImage = _.head(this.user.images);
+  }
+
+  openDialogPlaylist(): void {
+    const dialogRef = this.dialog.open(DialogPlaylistFormComponent, {
+      width: '600px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(!result) return;
+      this.createPlaylist(result); 
+    });
+  }
+
+  createPlaylist(body) {
+    this.spotifyService.createPlaylist(body).toPromise().then(() => this.getPlaylists());
   }
 
   getPlaylists() {

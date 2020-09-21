@@ -22,6 +22,10 @@
       </div>
     </div>
     <hr>
+    <div class="d-flex justify-content-between mb-10 mt-10">
+      <h2>Playlists</h2>
+      <button mat-stroked-button color="primary" (click)="openDialogPlaylist()">Create</button>
+    </div>
     <div class="playlists">
       <div *ngFor="let playlist of playlists; let index = index">
         <app-cardPlaylist [playlist]="playlist" [index]="index"></app-cardPlaylist>

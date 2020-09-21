@@ -4,9 +4,19 @@ import { MatRippleModule } from '@angular/material/core';
 import { ImageFallbackDirective } from 'src/app/directives/image-fallback.directive';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { DialogPlaylistFormComponent } from 'src/app/components/dialog-playlist-form/dialog-playlist-form.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
-    ImageFallbackDirective
+    ImageFallbackDirective,
+    DialogPlaylistFormComponent
+  ],
+  entryComponents: [
+    DialogPlaylistFormComponent
   ],
   exports: [
     MatButtonModule,
@@ -14,12 +24,22 @@ import { MatIconModule } from '@angular/material/icon';
     ImageFallbackDirective,
     MatMenuModule,
     MatIconModule,
+    MatDialogModule,
+    MatSlideToggleModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   imports: [
     MatButtonModule,
     MatRippleModule,
     MatMenuModule,
     MatIconModule,
+    MatDialogModule,
+    MatSlideToggleModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedComponentsModule {

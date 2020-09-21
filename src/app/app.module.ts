@@ -11,7 +11,9 @@ import { HttpRequestInterceptor } from './helpers/http.interceptor';
 import { SharedComponentsModule } from './modules/shared/shared-components.module';
 import { ImageFallbackDirective } from './directives/image-fallback.directive';
 import { ErrorInterceptor } from './helpers/error.interceptor';
-import { CardMusicComponent } from './components/card-music/card-music.component';;
+import { CardMusicComponent } from './components/card-music/card-music.component';
+import { DialogPlaylistFormComponent } from './components/dialog-playlist-form/dialog-playlist-form.component';import { ReactiveFormsModule } from '@angular/forms';
+;
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,7 @@ import { CardMusicComponent } from './components/card-music/card-music.component
     BrowserAnimationsModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    SharedComponentsModule
+    SharedComponentsModule, 
   ],
   exports: [
     SharedComponentsModule

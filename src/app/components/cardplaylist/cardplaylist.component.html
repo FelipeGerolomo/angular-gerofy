@@ -5,15 +5,6 @@
   <img [src]="getPlayListImage()" alt="Playlist" class="playlist-img align-self-center mr-15">
   <div class="align-self-center">
     <h3 class="poppins-medium">{{playlist?.name}}</h3>
-    <p>{{playlist?.tracks?.total}} tracks</p>
+    <p class="poppins">{{playlist?.tracks?.total}} tracks</p>
   </div>
-  <button mat-icon-button [matMenuTriggerFor]="menu" class="align-self-center ml-auto">
-    <mat-icon>more_horiz</mat-icon>
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-      <mat-icon color="warn">delete</mat-icon>
-      <span>Remove</span>
-    </button>
-  </mat-menu>
 </div>
