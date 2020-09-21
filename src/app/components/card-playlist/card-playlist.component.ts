@@ -6,11 +6,12 @@ import { SpotifyService } from 'src/app/services/spotifyService/spotify.service'
 import { DialogPlaylistFormComponent } from '../dialog-playlist-form/dialog-playlist-form.component';
 
 @Component({
-  selector: 'app-cardPlaylist',
-  templateUrl: './cardplaylist.component.html',
-  styleUrls: ['./cardplaylist.component.sass']
+  selector: 'app-card-playlist',
+  templateUrl: './card-playlist.component.html',
+  styleUrls: ['./card-playlist.component.sass']
 })
 export class CardPlaylistComponent implements OnInit {
+
   defaultPlaylistImage = 'assets/images/default-playlist.png';
 
   @Input('playlist') playlist: any;
@@ -35,7 +36,7 @@ export class CardPlaylistComponent implements OnInit {
 
   updatePlaylistDetails(body) {
     this.spotifyService.updatePlaylist(body, this.playlist.id).toPromise()
-      .then(() => { 
+      .then(() => {
         this.playlist.name = body.name;
         this.playlist.description = body.description;
         this.playlist.public = body.public;

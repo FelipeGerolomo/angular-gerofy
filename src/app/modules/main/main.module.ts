@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
 import { SharedComponentsModule } from '../shared/shared-components.module';
-import { CardPlaylistComponent } from 'src/app/components/cardplaylist/cardplaylist.component';
+import { CardPlaylistComponent } from 'src/app/components/card-playlist/card-playlist.component';
 
 @NgModule({
   declarations: [

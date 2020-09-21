@@ -10,6 +10,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpRequestInterceptor } from './helpers/http.interceptor';
 import { SharedComponentsModule } from './modules/shared/shared-components.module';
 import { ErrorInterceptor } from './helpers/error.interceptor';
+import { CardPlaylistComponent } from './components/card-playlist/card-playlist.component';
 @NgModule({
   declarations: [
     AppComponent,
