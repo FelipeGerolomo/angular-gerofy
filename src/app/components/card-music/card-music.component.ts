@@ -13,6 +13,7 @@ export class CardMusicComponent implements OnInit {
   @Input('selectMode') selectMode = false;
   @Input('isSelected') isSelected = false;
   @Output('onSelectSong') onSelectSong = new EventEmitter<any>();
+  @Output('onRemoveSong') onRemoveSong = new EventEmitter<any>();
 
   constructor() { }
 

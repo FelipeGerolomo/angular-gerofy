@@ -16,7 +16,7 @@
     </div>
     <div class="songs mt-20">
       <div *ngFor="let music of playlist?.tracks?.items; let index = index">
-        <app-card-music [music]='music?.track' [index]="index"></app-card-music>
+        <app-card-music [music]='music?.track' (onRemoveSong)="onRemoveSong($event)" [index]="index"></app-card-music>
       </div>
     </div>
   </div>

@@ -7,14 +7,9 @@
     <h3 class="poppins-medium">{{music?.name}}</h3>
     <p>{{getArtist()}}</p>
   </div>
-  <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="!selectMode" class="align-self-center ml-auto">
-    <mat-icon>more_horiz</mat-icon>
+  <button mat-icon-button (click)="onRemoveSong.emit(music)" color="warn" *ngIf="!selectMode" class="align-self-center ml-auto">
+    <mat-icon>delete</mat-icon>
   </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-      <mat-icon color="warn">delete</mat-icon>
-      <span>Remove</span>
-    </button>
-  </mat-menu>
-  <button mat-stroked-button color="primary" *ngIf="selectMode" class="align-self-center ml-auto" (click)="onSelectSong.emit(music)" [disabled]="isSelected">Add</button>
+  <button mat-stroked-button color="primary" *ngIf="selectMode" class="align-self-center ml-auto"
+    (click)="onSelectSong.emit(music)" [disabled]="isSelected">Add</button>
 </div>

@@ -39,6 +39,11 @@ export class SpotifyService {
     return this.http.post(environment.spotify_api + endpoint, null);
   }
 
+  removeSongsPlaylist(body, id) {
+    const endpoint = `playlists/${id}/tracks`;
+    return this.http.request('DELETE', environment.spotify_api + endpoint, {body});
+  }
+
   searchTrack(search) {
     const endpoint = `search?q=${encodeURI(search)}&type=track`;
     return this.http.get(environment.spotify_api + endpoint);

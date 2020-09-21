@@ -25,13 +25,18 @@ export class PlaylistComponent implements OnInit {
 
   getPlaylist() {
     this.spotifyService.getPlaylist(this.idPlaylist)
-      .toPromise().then((res) => {
-        this.playlist = res;
+      .toPromise().then((playlist) => {
+        this.playlist = playlist;
       })
   }
 
   getPlayListImage() {
     return this.playlist && this.playlist.images.length > 0 ? _.head(this.playlist.images).url : this.defaultPlaylistImage;
+  }
+
+  onRemoveSong(song) {
+    const body = { tracks: [song] };
+    this.spotifyService.removeSongsPlaylist(body, this.idPlaylist).toPromise().then(() => this.getPlaylist());
   }
 
   openDialogMusics() {
