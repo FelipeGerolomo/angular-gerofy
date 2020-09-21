@@ -33,4 +33,9 @@ export class SpotifyService {
     const endpoint = `playlists/${id}`;
     return this.http.put(environment.spotify_api + endpoint, body);
   }
+
+  searchTrack(search) {
+    const endpoint = `search?q=${encodeURI(search)}&type=track`;
+    return this.http.get(environment.spotify_api + endpoint);
+  }
 }
