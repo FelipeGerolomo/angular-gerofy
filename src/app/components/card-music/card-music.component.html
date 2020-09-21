@@ -1,11 +1,11 @@
 <div class="card-music">
-  <div class="align-self-center index">
-    <h3 class="poppins-medium align-self-center">#{{index+1}}</h3>
+  <div class="align-self-center index-spacing">
+    <h3 class="poppins-medium align-self-center index">#{{index+1}}</h3>
   </div>
   <img [src]="getMusicImage()" alt="Playlist" class="music-img align-self-center mr-15">
   <div class="align-self-center">
-    <h3 class="poppins-medium">{{music?.name}}</h3>
-    <p>{{getArtist()}}</p>
+    <h3 class="poppins-medium name">{{music?.name}}</h3>
+    <p class="artist">{{getArtist()}}</p>
   </div>
   <button mat-icon-button (click)="onRemoveSong.emit(music)" color="warn" *ngIf="!selectMode" class="align-self-center ml-auto">
     <mat-icon>delete</mat-icon>

@@ -91,11 +91,14 @@ p,a
 .fs-20
     @include font-size(20px!important)
 
+h2
+    @include font-size(20px!important)
+
 .w-100
     width: 100%
 
 mat-form-field
-    width: 100% 
+    width: 100%
 
 hr
     border-width: 1px
@@ -113,15 +116,15 @@ hr
     height: 0px
 
 ::-webkit-scrollbar-thumb
-    background:#6200EE
+    background: #6200EE
     border: 0px none #ffffff
     border-radius: 50px
 
 ::-webkit-scrollbar-thumb:hover
-    background:#6200EE
+    background: #6200EE
 
 ::-webkit-scrollbar-thumb:active
-    background:#6200EE
+    background: #6200EE
 
 ::-webkit-scrollbar-track
     background: #e2e2e2
@@ -129,10 +132,18 @@ hr
     border-radius: 50px
 
 ::-webkit-scrollbar-track:hover
-    background:#e2e2e2
+    background: #e2e2e2
 
 ::-webkit-scrollbar-track:active
     background: #e2e2e2
 
 ::-webkit-scrollbar-corner
     background: transparent
+
+@media (max-width: 425px)
+    ::ng-deep .cdk-overlay-pane 
+        max-width: 100%
+    body
+        overflow-y: unset
+    .card
+        width: 100%!important

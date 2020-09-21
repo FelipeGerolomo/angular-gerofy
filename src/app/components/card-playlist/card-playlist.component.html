@@ -1,11 +1,11 @@
 <div class="card-playlist" matRipple (click)="goToPlaylist()">
-  <div class="align-self-center index">
-    <h3 class="poppins-medium align-self-center">#{{index+1}}</h3>
+  <div class="align-self-center index-spacing">
+    <h3 class="poppins-medium align-self-center index">#{{index+1}}</h3>
   </div>
   <img [src]="getPlayListImage()" alt="Playlist" class="playlist-img align-self-center mr-15">
   <div class="align-self-center">
-    <h3 class="poppins-medium">{{playlist?.name}}</h3>
-    <p class="poppins">{{playlist?.tracks?.total}} tracks</p>
+    <h3 class="poppins-medium name">{{playlist?.name}}</h3>
+    <p class="poppins total-tracks">{{playlist?.tracks?.total}} tracks</p>
   </div>
   <button (click)="$event.stopPropagation()" mat-icon-button [matMenuTriggerFor]="menu"
     class="align-self-center ml-auto">

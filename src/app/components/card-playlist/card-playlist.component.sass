@@ -6,12 +6,23 @@
     border-radius: 20px
     margin-bottom: 16px
     cursor: pointer
-    .index 
+    .index-spacing 
         min-width: 40px
     .playlist-img
         border-radius: 6px
         width: 70px
         height: 70px
 
-    // &:last-child
-    //     margin-bottom: 0px
+@media screen and (max-width: 425px)
+    .card-playlist
+        .index-spacing 
+            min-width: 30px
+        .index
+            font-size: 12px
+        .name
+            font-size: 14px
+        .total-tracks
+            font-size: 12px
+        .playlist-img
+            width: 40px
+            height: 40px

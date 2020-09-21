@@ -3,9 +3,9 @@
     <div class="content-playlist">
       <img class="playlist-img" [src]="getPlayListImage()" alt="PlayList Image">
       <div class="playlist-info align-self-center">
-        <h4 class="poppins-medium">Playlist</h4>
-        <h2 class="poppins-medium">{{playlist?.name}}</h2>
-        <h5 class="poppins">Created by: <span class="poppins-medium">{{playlist?.owner.display_name}}</span> •
+        <h4 class="poppins-medium playlist">Playlist</h4>
+        <h2 class="poppins-medium name">{{playlist?.name}}</h2>
+        <h5 class="poppins created-by">Created by: <span class="poppins-medium">{{playlist?.owner.display_name}}</span> •
           {{playlist?.tracks?.total}} tracks </h5>
       </div>
     </div>
