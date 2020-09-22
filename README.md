@@ -37,3 +37,14 @@ ng serve
   - Cross-browser (deve ser utilizável em IE 10+, Edge, Chrome, FireFox) ✅
   - UX ✅
   - Usar rscss ✅
+
+## Melhorias Futuras
+
+  - Criação do Model/Tipo de acordo com os responses do Spotify API
+  - Server-side rendering (SSR)
+
+## Demonstração
+
+<figure class="video_container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/u4kU_evIFdE" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
