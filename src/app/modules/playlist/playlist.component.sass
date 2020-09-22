@@ -1,7 +1,7 @@
 .card
     width: 635px
     display: block
-    margin: 140px auto
+    margin: 100px auto
     .content-playlist
         display: flex
         .playlist-img
@@ -12,17 +12,20 @@
             border-radius: 20px
             margin-right: 20px
     .songs 
-        max-height: 400px
+        max-height: 245px
         overflow-y: auto
         padding-right: 10px
 
 @media screen and (max-width: 425px)
     .card
+        margin: 20px auto
         .content-playlist
             display: unset
             .playlist-img
                 margin: 0 auto
                 display: block
+                width: 150px
+                height: 150px
         .playlist
             text-align: center
             margin-top: 5px!important

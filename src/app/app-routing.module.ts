@@ -5,21 +5,11 @@ import { LoginComponent } from './modules/login/login.component';
 import { AuthGuard } from './services/AuthGuard/auth-guard.service';
 
 const routes: Routes = [
-  {
-    path: '', component: AppComponent,
-    children: [
-      { path: '', redirectTo: 'main', pathMatch: 'full' },
-      { path: 'main', loadChildren: () => import('./modules/main/main.module').then(m => m.MainModule), canActivate: [AuthGuard] },
-      { path: 'auth', loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule) },
-      { path: 'playlist/:id', loadChildren: () => import('./modules/playlist/playlist.module').then(m => m.PlaylistModule), canActivate: [AuthGuard] },
-    ]
-  },
-  
+  { path: '', redirectTo: 'main', pathMatch: 'full' },
+  { path: 'main', loadChildren: () => import('./modules/main/main.module').then(m => m.MainModule), canActivate: [AuthGuard] },
+  { path: 'auth', loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule) },
+  { path: 'playlist/:id', loadChildren: () => import('./modules/playlist/playlist.module').then(m => m.PlaylistModule) },
 ];
-
-// const routes: Routes = [
-//   { path: 'login', loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule) }
-// ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

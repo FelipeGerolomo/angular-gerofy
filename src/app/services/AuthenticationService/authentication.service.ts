@@ -81,8 +81,6 @@ export class AuthenticationService {
 
   logout() {
     localStorage.clear();
-    this.currentUserSubject.next(null);
-    this.currentCredentials.next(null);
     this.router.navigate(['/auth']);
   }
 }
