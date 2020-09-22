@@ -22,13 +22,21 @@
       </div>
     </div>
     <hr>
-    <div class="d-flex justify-content-between mb-10 mt-10">
-      <h2>Playlists</h2>
-      <button mat-stroked-button (click)="openDialogPlaylist()">Create</button>
+    <div *ngIf="playlists && playlists.length > 0">
+      <div class="d-flex justify-content-between mb-10 mt-10">
+        <h2>Playlists</h2>
+        <button mat-stroked-button (click)="openDialogPlaylist()">Create</button>
+      </div>
+      <div class="playlists">
+        <div *ngFor="let playlist of playlists; let index = index">
+          <app-card-playlist [playlist]="playlist" [index]="index"></app-card-playlist>
+        </div>
+      </div>
     </div>
-    <div class="playlists">
-      <div *ngFor="let playlist of playlists; let index = index">
-        <app-card-playlist [playlist]="playlist" [index]="index"></app-card-playlist>
+    <div *ngIf="playlists && playlists.length === 0">
+      <h1 class="text-center">You don't have any Playlist!</h1>
+      <div class="d-flex justify-content-center mb-10 mt-10">
+        <button mat-stroked-button (click)="openDialogPlaylist()">Create Playlist</button>
       </div>
     </div>
   </div>

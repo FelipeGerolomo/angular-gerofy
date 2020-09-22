@@ -17,7 +17,7 @@ export class MainComponent implements OnInit {
   userImage: any;
   defaultUserImage = 'assets/images/default-user.svg';
   defaultPlaylistImage = 'assets/images/default-playlist.svg';
-  playlists: Array<any>;
+  playlists: Array<any> = [];
 
   constructor(
     private authenticationService: AuthenticationService,

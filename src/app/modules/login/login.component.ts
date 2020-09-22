@@ -9,7 +9,7 @@ import { AuthenticationService } from 'src/app/services/AuthenticationService/au
 export class LoginComponent implements OnInit {
 
   constructor(private authenticationService: AuthenticationService) {
-  
+    
   }
 
   ngOnInit(): void {
