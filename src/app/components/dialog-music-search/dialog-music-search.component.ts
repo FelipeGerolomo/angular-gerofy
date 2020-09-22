@@ -15,7 +15,7 @@ export class DialogMusicSearchComponent implements OnInit {
     search: new FormControl(null),
   });
 
-  musics: any;
+  private songs: any;
 
   selectedSongs: Array<any> = [];
 
@@ -29,7 +29,11 @@ export class DialogMusicSearchComponent implements OnInit {
   }
 
   searchTrack(search) {
-    this.spotifyService.searchTrack(search).toPromise().then((search: any) => this.musics = search.tracks.items);
+    this.spotifyService.searchTrack(search).toPromise().then((search: any) => this.songs = search.tracks.items);
+  }
+
+  getSongs() {
+    return this.songs;
   }
 
   ngOnInit(): void {

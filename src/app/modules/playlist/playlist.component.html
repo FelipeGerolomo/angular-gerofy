@@ -4,25 +4,25 @@
       <img class="playlist-img" [src]="getPlayListImage()" alt="PlayList Image">
       <div class="playlist-info align-self-center">
         <h4 class="poppins-medium playlist">Playlist</h4>
-        <h2 class="poppins-medium name">{{playlist?.name}}</h2>
-        <h5 class="poppins created-by">Created by: <span class="poppins-medium">{{playlist?.owner.display_name}}</span>
+        <h2 class="poppins-medium name">{{getPlaylist()?.name}}</h2>
+        <h5 class="poppins created-by">Created by: <span class="poppins-medium">{{getPlaylist()?.owner.display_name}}</span>
           •
-          {{playlist?.tracks?.total}} tracks </h5>
+          {{getPlaylist()?.tracks?.total}} tracks </h5>
       </div>
     </div>
     <hr>
-    <ng-template [ngIf]="playlist?.tracks?.items && playlist?.tracks?.items.length > 0">
+    <ng-template [ngIf]="getPlaylist()?.tracks?.items && getPlaylist()?.tracks?.items.length > 0">
       <div class="d-flex justify-content-between mb-10 mt-10">
         <h2>Musics</h2>
         <button mat-stroked-button (click)="openDialogMusics()">Add</button>
       </div>
       <div class="songs mt-20">
-        <div *ngFor="let music of playlist?.tracks?.items; let index = index">
+        <div *ngFor="let music of getPlaylist()?.tracks?.items; let index = index">
           <app-card-music [music]='music?.track' (onRemoveSong)="onRemoveSong($event)" [index]="index"></app-card-music>
         </div>
       </div>
     </ng-template>
-    <ng-template [ngIf]="playlist?.tracks?.items && playlist?.tracks?.items.length === 0">
+    <ng-template [ngIf]="getPlaylist()?.tracks?.items && getPlaylist()?.tracks?.items.length === 0">
       <h1 class="text-center">Playlist empty!</h1>
       <div class="d-flex justify-content-center mb-10 mt-10">
         <button mat-stroked-button (click)="openDialogMusics()">Add Songs</button>

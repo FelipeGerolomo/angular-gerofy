@@ -13,11 +13,11 @@ import { SnackBarService } from 'src/app/services/snackBarService/snack-bar.serv
   styleUrls: ['./playlist.component.sass']
 })
 export class PlaylistComponent implements OnInit {
-  isSmallScreen = this.breakpointObserver.isMatched('(max-width: 425px)');
-  defaultPlaylistImage = 'assets/images/default-playlist.png';
+  private isSmallScreen = this.breakpointObserver.isMatched('(max-width: 425px)');
+  private defaultPlaylistImage = 'assets/images/default-playlist.png';
 
-  idPlaylist: string;
-  playlist: any;
+  private idPlaylist: string;
+  private playlist: any;
 
   constructor(
     private actRoute: ActivatedRoute,
@@ -27,13 +27,17 @@ export class PlaylistComponent implements OnInit {
     private snackBarService: SnackBarService
   ) {
     this.idPlaylist = this.actRoute.snapshot.params.id;
-    this.getPlaylist();
+    this.getCurrentPlaylist();
   }
 
   ngOnInit(): void {
   }
 
   getPlaylist() {
+    return this.playlist;
+  }
+
+  getCurrentPlaylist() {
     this.spotifyService.getPlaylist(this.idPlaylist)
       .toPromise().then((playlist) => {
         this.playlist = playlist;
@@ -48,7 +52,7 @@ export class PlaylistComponent implements OnInit {
     const body = { tracks: [song] };
     this.spotifyService.removeSongsPlaylist(body, this.idPlaylist).toPromise()
     .then(() => this.snackBarService.openSnackBarSuccess('🤩 ' + 'Successfully removed Song'))
-    .then(() => this.getPlaylist());
+    .then(() => this.getCurrentPlaylist());
   }
 
   openDialogMusics() {
@@ -63,7 +67,7 @@ export class PlaylistComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(() => {
-      this.getPlaylist();
+      this.getCurrentPlaylist();
     });
   }
 

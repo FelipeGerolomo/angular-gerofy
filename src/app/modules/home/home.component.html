@@ -1,22 +1,22 @@
 <div class="container">
   <div class="card">
     <div class="content-user">
-      <img class="user-img" [src]="userImage?.url || defaultUserImage" alt="User Image">
+      <img class="user-img" [src]="getUserImage()" alt="User Image">
       <div class="user-info">
-        <h1 class="poppins-medium mb-5 name">{{user?.display_name}}</h1>
-        <h2 class="poppins-medium c-grey email">{{user?.email}}</h2>
+        <h1 class="poppins-medium mb-5 name">{{getUser().display_name}}</h1>
+        <h2 class="poppins-medium c-grey email">{{getUser().email}}</h2>
         <div class="card-info mt-10">
           <div class="info-item">
             <p class="poppins-medium c-grey mb-5 title">Country</p>
-            <h1 class="poppins-medium info">{{user?.country}}</h1>
+            <h1 class="poppins-medium info">{{getUser().country}}</h1>
           </div>
           <div class="info-item">
             <p class="poppins-medium c-grey mb-5 title">Followers</p>
-            <h1 class="poppins-medium info">{{user?.followers?.total}}</h1>
+            <h1 class="poppins-medium info">{{getUser().followers?.total}}</h1>
           </div>
           <div class="info-item">
             <p class="poppins-medium c-grey mb-5 title">Product</p>
-            <h1 class="poppins-medium info">{{user?.product | titlecase }}</h1>
+            <h1 class="poppins-medium info">{{getUser().product | titlecase }}</h1>
           </div>
         </div>
       </div>

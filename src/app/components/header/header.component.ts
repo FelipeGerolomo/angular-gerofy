@@ -9,7 +9,7 @@ import { AuthenticationService } from 'src/app/services/AuthenticationService/au
 })
 export class HeaderComponent implements OnInit {
 
-  hideHeader = false;
+  private hideHeader = false;
 
   constructor(private authenticationService: AuthenticationService, public router: Router) {
     this.router.events.subscribe((route) => {
@@ -18,6 +18,10 @@ export class HeaderComponent implements OnInit {
       }
     });
   }
+
+  getHideHeader() {
+    return this.hideHeader;
+  } 
 
   logout() {
     this.authenticationService.logout();

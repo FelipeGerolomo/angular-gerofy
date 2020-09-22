@@ -13,7 +13,7 @@ import { DialogPlaylistFormComponent } from '../dialog-playlist-form/dialog-play
 })
 export class CardPlaylistComponent implements OnInit {
 
-  defaultPlaylistImage = 'assets/images/default-playlist.png';
+  private defaultPlaylistImage = 'assets/images/default-playlist.png';
 
   @Input('playlist') playlist: any;
   @Input('index') index: any;

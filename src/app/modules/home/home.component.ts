@@ -13,11 +13,10 @@ import { SnackBarService } from 'src/app/services/snackBarService/snack-bar.serv
 })
 export class HomeComponent implements OnInit {
 
-  user: any;
-  userImage: any;
-  defaultUserImage = 'assets/images/default-user.svg';
-  defaultPlaylistImage = 'assets/images/default-playlist.svg';
-  playlists: Array<any>;
+  private user: any;
+  private userImage: any;
+  private defaultUserImage = 'assets/images/default-user.svg';
+  public playlists: Array<any>;
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -25,7 +24,7 @@ export class HomeComponent implements OnInit {
     public dialog: MatDialog,
     private snackBarService: SnackBarService
   ) {
-    this.getUser();
+    this.getCurrentUser();
     this.getPlaylists();
   }
 
@@ -34,6 +33,10 @@ export class HomeComponent implements OnInit {
   }
 
   getUser() {
+    return this.user;
+  }
+
+  getCurrentUser() {
     this.user = this.authenticationService.currentUserValue;
     this.userImage = _.head(this.user.images);
   }
@@ -60,6 +63,10 @@ export class HomeComponent implements OnInit {
       .toPromise().then((playlists: any) => {
         this.playlists = playlists.items;
       });
+  }
+
+  getUserImage() {
+    return this.userImage.url || this.defaultUserImage;
   }
 
 }
