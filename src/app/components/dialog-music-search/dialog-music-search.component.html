@@ -1,4 +1,10 @@
-<h2 class="text-center">Add Songs</h2>
+<div class="header d-flex justify-content-between">
+  <div class="hidden-element"></div>
+  <h2 class="align-self-center">Add Songs</h2>
+  <button mat-icon-button [mat-dialog-close]="false">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
 <form [formGroup]="formGroup">
   <div class="row mt-20">
     <div class="col">

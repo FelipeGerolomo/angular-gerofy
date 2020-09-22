@@ -1,5 +1,5 @@
 <mat-toolbar *ngIf="hideHeader">
-  <span class="text-center logo-title proxima-nova-bold">Gerofy</span>
+  <span class="text-center logo-title proxima-nova-bold" [routerLink]="['/main']" >Gerofy</span>
   <span class="spacer"></span>
   <button mat-icon-button (click)="logout()">
     <mat-icon>logout</mat-icon>

@@ -61,8 +61,8 @@ export class PlaylistComponent implements OnInit {
       }
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      if (!result) return;
+    dialogRef.afterClosed().subscribe(() => {
+      this.getPlaylist();
     });
   }
 
