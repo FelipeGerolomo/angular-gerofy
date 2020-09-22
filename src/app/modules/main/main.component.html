@@ -3,7 +3,7 @@
     <div class="content-user">
       <img class="user-img" [src]="userImage?.url || defaultUserImage" alt="User Image">
       <div class="user-info">
-        <h1 class="fs-28 poppins-medium mb-5 name">{{user?.display_name}}</h1>
+        <h1 class="poppins-medium mb-5 name">{{user?.display_name}}</h1>
         <h2 class="poppins-medium c-grey email">{{user?.email}}</h2>
         <div class="card-info mt-10">
           <div class="info-item">
@@ -24,7 +24,7 @@
     <hr>
     <div class="d-flex justify-content-between mb-10 mt-10">
       <h2>Playlists</h2>
-      <button mat-stroked-button color="primary" (click)="openDialogPlaylist()">Create</button>
+      <button mat-stroked-button (click)="openDialogPlaylist()">Create</button>
     </div>
     <div class="playlists">
       <div *ngFor="let playlist of playlists; let index = index">

@@ -1,0 +1,66 @@
+$font-path: "../fonts" !default
+@import "~rfs/sass"
+@font-face
+    src: url('#{$font-path}/Proxima Nova Bold.otf') format("opentype")
+    font-family: 'Proxima Nova Bold'
+    font-weight: bold
+    font-style: normal
+
+@font-face
+    src: url('#{$font-path}/ProximaNova-Regular.otf') format("opentype")
+    font-family: 'Proxima Nova Regular'
+    font-weight: normal
+    font-style: normal
+
+@font-face
+    src: url('#{$font-path}/Poppins-Regular.ttf') format("opentype")
+    font-family: 'Poppins'
+    font-weight: normal
+    font-style: normal
+
+@font-face
+    src: url('#{$font-path}/Poppins-Bold.ttf') format("opentype")
+    font-family: 'Poppins Bold'
+    font-weight: bold
+    font-style: normal
+
+@font-face
+    src: url('#{$font-path}/Poppins-Light.ttf') format("opentype")
+    font-family: 'Poppins Light'
+    font-weight: lighter
+    font-style: normal
+
+@font-face
+    src: url('#{$font-path}/Poppins-Medium.ttf') format("opentype")
+    font-family: 'Poppins Medium'
+    font-style: normal
+
+h1,h2,h3,h4,h5,h6,p
+    margin: 0!important
+
+h1
+    font-family: 'Proxima Nova Regular'!important
+
+h3,h2
+    font-family: 'Poppins'!important
+
+p,a
+    font-family: 'Poppins Light'!important
+
+.poppins-light
+    font-family: 'Poppins Light'!important
+
+.poppins-medium
+    font-family: 'Poppins Medium'!important
+
+.poppins
+    font-family: 'Poppins'!important
+
+.proxima-nova-bold
+    font-family: 'Poppins Bold'!important
+
+.text-center
+    text-align: center
+
+h2
+    @include font-size(20px!important)

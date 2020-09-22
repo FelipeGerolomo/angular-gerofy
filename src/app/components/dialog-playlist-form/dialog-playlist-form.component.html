@@ -1,4 +1,4 @@
-<h2 class="text-center">Adicionar Playlist</h2>
+<h2 class="text-center">{{data ? 'Edit Playlist' : 'Add Playlist'}}</h2>
 <form class="mt-15" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
   <div class="row">
     <div class="col">
@@ -18,7 +18,7 @@
   </div>
   <div class="row">
     <div class="col">
-      <mat-slide-toggle formControlName="public">Public</mat-slide-toggle>
+      <mat-slide-toggle color="primary" formControlName="public">Public</mat-slide-toggle>
     </div>
   </div>
   <div class="d-flex justify-content-end mt-20">

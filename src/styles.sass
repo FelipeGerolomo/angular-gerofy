@@ -1,42 +1,9 @@
-$font-path: "./assets/fonts" !default
 @import ./assets/styles/bootstrap-grid.min.css
 @import ./assets/styles/_spaces.scss
-@import "~rfs/sass"
-
-@font-face
-    src: url('#{$font-path}/Proxima Nova Bold.otf') format("opentype")
-    font-family: 'Proxima Nova Bold'
-    font-weight: bold
-    font-style: normal
-
-@font-face
-    src: url('#{$font-path}/ProximaNova-Regular.otf') format("opentype")
-    font-family: 'Proxima Nova Regular'
-    font-weight: normal
-    font-style: normal
-
-@font-face
-    src: url('#{$font-path}/Poppins-Regular.ttf') format("opentype")
-    font-family: 'Poppins'
-    font-weight: normal
-    font-style: normal
-
-@font-face
-    src: url('#{$font-path}/Poppins-Bold.ttf') format("opentype")
-    font-family: 'Poppins Bold'
-    font-weight: bold
-    font-style: normal
-
-@font-face
-    src: url('#{$font-path}/Poppins-Light.ttf') format("opentype")
-    font-family: 'Poppins Light'
-    font-weight: lighter
-    font-style: normal
-
-@font-face
-    src: url('#{$font-path}/Poppins-Medium.ttf') format("opentype")
-    font-family: 'Poppins Medium'
-    font-style: normal
+@import ./assets/styles/_material-theme.scss
+@import ./assets/styles/_fonts.sass
+@import ./assets/styles/_colors.sass
+@import ./assets/styles/_scrollbar.sass
 
 body
     background-color: #EFF1F4
@@ -48,54 +15,9 @@ body
     box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.16)
     background-color: white
 
-h1,h2,h3,h4,h5,h6,p
-    margin: 0!important
-
-h1
-    font-family: 'Proxima Nova Regular'!important
-
-h3,h2
-    font-family: 'Poppins'!important
-
-p,a
-    font-family: 'Poppins Light'!important
-
-.poppins-light
-    font-family: 'Poppins Light'!important
-
-.poppins-medium
-    font-family: 'Poppins Medium'!important
-
-.poppins
-    font-family: 'Poppins'!important
-
-.proxima-nova-bold
-    font-family: 'Poppins Bold'!important
-
-.c-grey
-    color: #BCC2D0
-
-.c-light-grey
-    color: #EFF1F4
-
-.c-spotify
-    color: #00D95F
-
 .center-image
     display: block
     margin: 0 auto
-
-.text-center
-    text-align: center
-
-.fs-28
-    @include font-size(28px!important)
-
-.fs-20
-    @include font-size(20px!important)
-
-h2
-    @include font-size(20px!important)
 
 .w-100
     width: 100%
@@ -103,48 +25,15 @@ h2
 mat-form-field
     width: 100%
 
-hr
+hr 
     border-width: 1px
     border-style: double
     border-color: #BCC2D0
     border-radius: 10px
     margin: 16px 0px
 
-::-webkit-scrollbar
-    width: 7px
-    height: 10px
-
-::-webkit-scrollbar-button
-    width: 0px
-    height: 0px
-
-::-webkit-scrollbar-thumb
-    background: #6200EE
-    border: 0px none #ffffff
-    border-radius: 50px
-
-::-webkit-scrollbar-thumb:hover
-    background: #6200EE
-
-::-webkit-scrollbar-thumb:active
-    background: #6200EE
-
-::-webkit-scrollbar-track
-    background: #e2e2e2
-    border: 0px none #ffffff
-    border-radius: 50px
-
-::-webkit-scrollbar-track:hover
-    background: #e2e2e2
-
-::-webkit-scrollbar-track:active
-    background: #e2e2e2
-
-::-webkit-scrollbar-corner
-    background: transparent
-
 @media (max-width: 425px)
-    ::ng-deep .cdk-overlay-pane 
+    ::ng-deep .cdk-overlay-pane
         max-width: 100%
     body
         overflow-y: unset
