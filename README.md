@@ -1,7 +1,7 @@
 ## GEROFY - HBSIS/AMBEV TESTE - API SPOTIFY
 
 Teste técnico Angular 10+ HBSIS/AMBEV
-Essa aplicação permite você gerênciar as Playlists do seu Spotify.
+Essa aplicação permite você gerenciar as Playlists do seu Spotify.
 
 ## Demonstração em Produção 
 https://breathy-ensigns.000webhostapp.com/
