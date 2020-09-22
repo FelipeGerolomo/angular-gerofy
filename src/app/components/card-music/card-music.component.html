@@ -10,6 +10,6 @@
   <button mat-icon-button (click)="onRemoveSong.emit(music)" color="warn" *ngIf="!selectMode" class="align-self-center ml-auto">
     <mat-icon>delete</mat-icon>
   </button>
-  <button mat-stroked-button color="primary" *ngIf="selectMode" class="align-self-center ml-auto"
+  <button mat-stroked-button *ngIf="selectMode" class="align-self-center ml-auto"
     (click)="onSelectSong.emit(music)" [disabled]="isSelected">Add</button>
 </div>

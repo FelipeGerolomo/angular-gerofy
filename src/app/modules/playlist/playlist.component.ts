@@ -54,6 +54,7 @@ export class PlaylistComponent implements OnInit {
   openDialogMusics() {
     const dialogRef = this.dialog.open(DialogMusicSearchComponent, {
       minWidth: this.isSmallScreen ? '100%' : '600px',
+      maxWidth: this.isSmallScreen ? '100%' : '600px',
       maxHeight: '600px',
       data: {
         songs: this.playlist.tracks.items.map((item) => { return item.track }),
