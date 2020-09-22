@@ -66,7 +66,7 @@ export class HomeComponent implements OnInit {
   }
 
   getUserImage() {
-    return this.userImage.url || this.defaultUserImage;
+    return this.userImage && this.userImage.url || this.defaultUserImage;
   }
 
 }
