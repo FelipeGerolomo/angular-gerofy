@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MainRoutingModule } from './main-routing.module';
-import { MainComponent } from './main.component';
-import { SharedComponentsModule } from '../shared/shared-components.module';
+import { HomeRoutingModule } from './home-routing.module';
+import { HomeComponent } from './home.component';
 import { CardPlaylistComponent } from 'src/app/components/card-playlist/card-playlist.component';
+import { SharedComponentsModule } from '../shared/shared-components.module';
+
 
 @NgModule({
   declarations: [
-    MainComponent,
+    HomeComponent,
     CardPlaylistComponent
   ],
   imports: [
     CommonModule,
-    MainRoutingModule,
+    HomeRoutingModule,
     SharedComponentsModule,
   ]
 })
-export class MainModule { }
+export class HomeModule { }

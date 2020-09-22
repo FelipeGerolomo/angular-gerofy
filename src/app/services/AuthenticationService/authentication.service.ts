@@ -75,7 +75,7 @@ export class AuthenticationService {
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.currentUserSubject = new BehaviorSubject<any>(user);
         this.currentUser = this.currentUserSubject.asObservable();
-        this.router.navigate(['/main']);
+        this.router.navigate(['/home']);
       });
   }
 

@@ -4,14 +4,14 @@ import _ from 'lodash';
 import { AuthenticationService } from 'src/app/services/AuthenticationService/authentication.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogPlaylistFormComponent } from 'src/app/components/dialog-playlist-form/dialog-playlist-form.component';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackBarService } from 'src/app/services/snackBarService/snack-bar.service';
+
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.sass']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.sass']
 })
-export class MainComponent implements OnInit {
+export class HomeComponent implements OnInit {
 
   user: any;
   userImage: any;
@@ -44,15 +44,15 @@ export class MainComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(!result) return;
-      this.createPlaylist(result); 
+      if (!result) return;
+      this.createPlaylist(result);
     });
   }
 
   createPlaylist(body) {
     this.spotifyService.createPlaylist(body).toPromise()
-    .then(() => this.snackBarService.openSnackBarSuccess('🤩 ' + 'Successfully created Playlist'))
-    .then(() => this.getPlaylists())
+      .then(() => this.snackBarService.openSnackBarSuccess('🤩 ' + 'Successfully created Playlist'))
+      .then(() => this.getPlaylists())
   }
 
   getPlaylists() {
