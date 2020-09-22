@@ -12,6 +12,7 @@ import { SharedComponentsModule } from './modules/shared/shared-components.modul
 import { ErrorInterceptor } from './helpers/error.interceptor';
 import { CardPlaylistComponent } from './components/card-playlist/card-playlist.component';
 import { HeaderComponent } from './components/header/header.component';
+import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { HeaderComponent } from './components/header/header.component';
     BrowserAnimationsModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    SharedComponentsModule,       
+    SharedComponentsModule,
+    MatSnackBarModule
   ],
   exports: [
     SharedComponentsModule
@@ -31,6 +33,7 @@ import { HeaderComponent } from './components/header/header.component';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2500, verticalPosition: 'bottom' } }
   ],
   bootstrap: [AppComponent]
 })

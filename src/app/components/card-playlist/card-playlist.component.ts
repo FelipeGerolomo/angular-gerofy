@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import _ from 'lodash';
+import { SnackBarService } from 'src/app/services/snackBarService/snack-bar.service';
 import { SpotifyService } from 'src/app/services/spotifyService/spotify.service';
 import { DialogPlaylistFormComponent } from '../dialog-playlist-form/dialog-playlist-form.component';
 
@@ -20,7 +21,8 @@ export class CardPlaylistComponent implements OnInit {
   constructor(
     private router: Router,
     private spotifyService: SpotifyService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private snackBarService: SnackBarService
   ) { }
 
   ngOnInit(): void {
@@ -40,7 +42,8 @@ export class CardPlaylistComponent implements OnInit {
         this.playlist.name = body.name;
         this.playlist.description = body.description;
         this.playlist.public = body.public;
-      });
+      })
+      .then(() => this.snackBarService.openSnackBarSuccess('🤩 ' + 'Successfully modified Playlist'))
   }
 
   openDialogPlaylist(): void {

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SpotifyService } from 'src/app/services/spotifyService/spotify.service';
 import _ from 'lodash';
+import { SnackBarService } from 'src/app/services/snackBarService/snack-bar.service';
 @Component({
   selector: 'app-dialog-music-search',
   templateUrl: './dialog-music-search.component.html',
@@ -21,6 +22,7 @@ export class DialogMusicSearchComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<DialogMusicSearchComponent>,
     private spotifyService: SpotifyService,
+    private snackBarService: SnackBarService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.selectedSongs = data.songs;
@@ -40,8 +42,9 @@ export class DialogMusicSearchComponent implements OnInit {
   isSelected = (song) => _.some(this.selectedSongs, { uri: song.uri });
 
   onSelectSong(song) {
-    this.spotifyService.addSongsPlaylist(song.uri, this.data.playlist)
-      .toPromise().then(() => this.selectedSongs.push(song));
+    this.spotifyService.addSongsPlaylist(song.uri, this.data.playlist).toPromise()
+    .then(() => this.selectedSongs.push(song))
+    .then(() => this.snackBarService.openSnackBarSuccess('🤩 ' + 'Successfully added Song'));
   }
 
 }

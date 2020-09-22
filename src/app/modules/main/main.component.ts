@@ -4,6 +4,8 @@ import _ from 'lodash';
 import { AuthenticationService } from 'src/app/services/AuthenticationService/authentication.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogPlaylistFormComponent } from 'src/app/components/dialog-playlist-form/dialog-playlist-form.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackBarService } from 'src/app/services/snackBarService/snack-bar.service';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -20,7 +22,8 @@ export class MainComponent implements OnInit {
   constructor(
     private authenticationService: AuthenticationService,
     private spotifyService: SpotifyService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private snackBarService: SnackBarService
   ) {
     this.getUser();
     this.getPlaylists();
@@ -47,7 +50,9 @@ export class MainComponent implements OnInit {
   }
 
   createPlaylist(body) {
-    this.spotifyService.createPlaylist(body).toPromise().then(() => this.getPlaylists());
+    this.spotifyService.createPlaylist(body).toPromise()
+    .then(() => this.snackBarService.openSnackBarSuccess('🤩 ' + 'Successfully created Playlist'))
+    .then(() => this.getPlaylists())
   }
 
   getPlaylists() {
