@@ -11,7 +11,7 @@
       </div>
     </div>
     <hr>
-    <div *ngIf="playlist?.tracks?.items && playlist?.tracks?.items.length > 0">
+    <ng-template [ngIf]="playlist?.tracks?.items && playlist?.tracks?.items.length > 0">
       <div class="d-flex justify-content-between mb-10 mt-10">
         <h2>Musics</h2>
         <button mat-stroked-button (click)="openDialogMusics()">Add</button>
@@ -21,12 +21,12 @@
           <app-card-music [music]='music?.track' (onRemoveSong)="onRemoveSong($event)" [index]="index"></app-card-music>
         </div>
       </div>
-    </div>
-    <div *ngIf="playlist?.tracks?.items && playlist?.tracks?.items.length === 0">
+    </ng-template>
+    <ng-template [ngIf]="playlist?.tracks?.items && playlist?.tracks?.items.length === 0">
       <h1 class="text-center">Playlist empty!</h1>
       <div class="d-flex justify-content-center mb-10 mt-10">
         <button mat-stroked-button (click)="openDialogMusics()">Add Songs</button>
       </div>
-    </div>
+    </ng-template>
   </div>
 </div>

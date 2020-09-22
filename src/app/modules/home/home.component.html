@@ -22,7 +22,7 @@
       </div>
     </div>
     <hr>
-    <div *ngIf="playlists && playlists.length > 0">
+    <ng-template [ngIf]="playlists && playlists.length > 0">
       <div class="d-flex justify-content-between mb-10 mt-10">
         <h2>Playlists</h2>
         <button mat-stroked-button (click)="openDialogPlaylist()">Create</button>
@@ -32,12 +32,12 @@
           <app-card-playlist [playlist]="playlist" [index]="index"></app-card-playlist>
         </div>
       </div>
-    </div>
-    <div *ngIf="playlists && playlists.length === 0">
+    </ng-template>
+    <ng-template [ngIf]="playlists && playlists.length === 0">
       <h1 class="text-center">You don't have any Playlist!</h1>
       <div class="d-flex justify-content-center mb-10 mt-10">
         <button mat-stroked-button (click)="openDialogPlaylist()">Create Playlist</button>
       </div>
-    </div>
+    </ng-template>
   </div>
 </div>
